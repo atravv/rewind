@@ -29,6 +29,10 @@ body {
   background-color: #1b1f2a;
 }
 
+.screen-top-card {
+  align-items: flex-start;
+  padding-top: 40px;
+}
 
 .overlay {
   position: absolute;
@@ -72,19 +76,19 @@ p {
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 22px;
   line-height: 1.25;
   margin-bottom: 14px;
 }
 
 p {
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.95);
 }
 
 .small-text {
-  font-size: 14px;
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.74);
 }
 
@@ -99,9 +103,9 @@ p {
 button {
   border: none;
   border-radius: 999px;
-  padding: 12px 22px;
+  padding: 8px 14px;
   min-width: 100px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.92);
@@ -147,18 +151,11 @@ button.secondary {
   color: rgba(255, 255, 255, 0.72);
 }
 
-.round-label {
-  font-size: 15px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.78);
-  margin-bottom: 14px;
-}
-
 .success-label {
   display: inline-block;
   padding: 8px 14px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -171,7 +168,7 @@ button.secondary {
 }
 
 .meter-label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.92);
   margin-bottom: 8px;
@@ -199,11 +196,11 @@ button.secondary {
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   p {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .buttons {
@@ -211,6 +208,6 @@ button.secondary {
   }
 
   button {
-    width: 100%;
+    width: 40%;
   }
 }

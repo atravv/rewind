@@ -13,7 +13,7 @@ const imagePaths = [
 
 const persuasionSteps = [
   {
-    text: "Ei Clau, non mi rembra una scelta appropriata! Sei sicura di non accettare?",
+    text: "Pessima idea ☹️ Sicura di rifiutare?",
     hint: "(Se cambi idea, premi NO)",
     acceptOnYes: false,
     image: "images/pic1.jpg",
@@ -98,9 +98,9 @@ function closePage() {
   }, 150);
 }
 
-function backgroundScreen(image, content) {
+function backgroundScreen(image, content, extraClass = "") {
   return `
-    <div class="screen" style="background-image: url('${image}')">
+    <div class="screen ${extraClass}" style="background-image: url('${image}')">
       <div class="overlay"></div>
       ${content}
       <div class="footer">© Travvix</div>
@@ -194,7 +194,7 @@ function renderStartScreen() {
 function renderQuestionScreen() {
   app.innerHTML = backgroundScreen("images/back.png", `
     <div class="card">
-      <p>La vita è troppo breve per sprecare del tempo insieme.<br></p>
+      <p>La vita è troppo breve per sprecare del tempo non passandolo insieme.<br></p>
       <h2>Vuoi ri-iniziare a frequentarsi?</h2>
       <div class="buttons">
         <button onclick="startLoading()">Sì</button>
@@ -225,7 +225,6 @@ function renderPersuadeScreen() {
 
   app.innerHTML = backgroundScreen(step.image, `
     <div class="card">
-      <p class="round-label">Round ${state.persuasionIndex + 1}/${persuasionSteps.length}</p>
 
       <div class="meter-wrap">
         <div class="meter-label">Antipatia: ${step.resistance}%</div>
@@ -242,7 +241,7 @@ function renderPersuadeScreen() {
         <button onclick="handlePersuadeYes()">Sì</button>
       </div>
     </div>
-  `);
+  `, "screen-top-card");
 }
 
 function renderFinalScreen() {
@@ -254,19 +253,18 @@ function renderFinalScreen() {
         <button onclick="closePage()">Chiudi</button>
       </div>
     </div>
-  `);
+  `, "screen-top-card");
 }
 
 function renderNotFunnyScreen() {
-  app.innerHTML = backgroundScreen("images/frieren.jpg", `
+  app.innerHTML = backgroundScreen("images/pic_nok.jpg", `
     <div class="card">
       <h2>Non sei per niente simpy</h2>
-      <p>Frieren non approva questa scelta.</p>
       <div class="buttons">
         <button onclick="closePage()">Close</button>
       </div>
     </div>
-  `);
+  `, "screen-top-card");
 }
 
 function renderNotInterestedScreen() {
@@ -278,7 +276,7 @@ function renderNotInterestedScreen() {
         <button onclick="navigateWithFade('start')">Torna indietro</button>
       </div>
     </div>
-  `);
+  `, "screen-top-card");
 }
 
 function render() {
