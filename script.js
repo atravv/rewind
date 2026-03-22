@@ -3,12 +3,12 @@ const overlay = document.getElementById("transitionOverlay");
 
 const imagePaths = [
   "images/back.png",
-  "images/pic1.png",
-  "images/pic2.png",
-  "images/pic3.png",
-  "images/pic4.png",
-  "images/pic_ok.png",
-  "images/pic_nok.png"
+  "images/pic1.jpg",
+  "images/pic2.jpg",
+  "images/pic3.jpg",
+  "images/pic4.jpg",
+  "images/pic_ok.jpg",
+  "images/pic_nok.jpg"
 ];
 
 const persuasionSteps = [
@@ -16,28 +16,28 @@ const persuasionSteps = [
     text: "Ei Clau, non mi rembra una scelta appropriata! Sei sicura di non accettare?",
     hint: "(Se cambi idea, premi NO)",
     acceptOnYes: false,
-    image: "images/pic1.png",
+    image: "images/pic1.jpg",
     resistance: 8
   },
   {
     text: "Non è che hai sbagliato tasto?",
     hint: "(Capita! Premi SÌ!)",
     acceptOnYes: true,
-    image: "images/pic2.png",
+    image: "images/pic2.jpg",
     resistance: 31
   },
   {
     text: "Realizzeremo tutti i nostri progetti! Cambia idea dai 🙂",
     hint: "(Se cambi idea, premi SÌ)",
     acceptOnYes: true,
-    image: "images/pic3.png",
+    image: "images/pic3.jpg",
     resistance: 56
   },
   {
     text: "Ultima chance… sicurissima? OOOHH",
     hint: "(Se cambi idea, premi NO)",
     acceptOnYes: false,
-    image: "images/pic4.png",
+    image: "images/pic4.jpg",
     resistance: 82
   }
 ];
@@ -46,7 +46,7 @@ const state = {
   route: "start",
   persuasionIndex: 0,
   finalText: "Yeppaaa\n\nGiovedì sera sei a cena fuori con me 🙂",
-  finalImage: "images/pic_ok.png"
+  finalImage: "images/pic_ok.jpg"
 };
 
 let loadingTimeouts = [];
@@ -88,6 +88,14 @@ function navigateWithFade(route) {
       overlay.classList.remove("active");
     }, 50);
   }, 260);
+}
+
+function closePage() {
+  window.close();
+
+  setTimeout(() => {
+    navigateWithFade("start");
+  }, 150);
 }
 
 function backgroundScreen(image, content) {
@@ -177,7 +185,7 @@ function renderStartScreen() {
       <h2>Ei, sei sola in questo momento?</h2>
       <div class="buttons">
         <button onclick="navigateWithFade('question')">Sì</button>
-        <button onclick="navigateWithFade('not_interested')">No</button>
+        <button onclick="closePage()">No</button>
       </div>
     </div>
   `);
@@ -243,19 +251,19 @@ function renderFinalScreen() {
       <p class="success-label">Missione compiuta ✨</p>
       <h2 style="white-space: pre-line;">${state.finalText}</h2>
       <div class="buttons">
-        <button onclick="navigateWithFade('start')">Chiudi</button>
+        <button onclick="closePage()">Chiudi</button>
       </div>
     </div>
   `);
 }
 
 function renderNotFunnyScreen() {
-  app.innerHTML = backgroundScreen("images/pic_nok.png", `
+  app.innerHTML = backgroundScreen("images/frieren.jpg", `
     <div class="card">
       <h2>Non sei per niente simpy</h2>
       <p>Frieren non approva questa scelta.</p>
       <div class="buttons">
-        <button onclick="navigateWithFade('start')">Close</button>
+        <button onclick="closePage()">Close</button>
       </div>
     </div>
   `);
