@@ -92,10 +92,6 @@ function navigateWithFade(route) {
 
 function closePage() {
   window.close();
-
-  setTimeout(() => {
-    navigateWithFade("start");
-  }, 150);
 }
 
 function backgroundScreen(image, content, extraClass = "") {
