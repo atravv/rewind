@@ -13,7 +13,7 @@ const imagePaths = [
 
 const persuasionSteps = [
   {
-    text: "Pessima idea ☹️ Sicura di rifiutare?",
+    text: "Pessima idea ☹️ Sicura di non vederlo?",
     hint: "(Se cambi idea, premi NO)",
     acceptOnYes: false,
     image: "images/pic1.jpg",
@@ -195,7 +195,7 @@ function renderQuestionScreen() {
   app.innerHTML = backgroundScreen("images/back.png", `
     <div class="card">
       <p>La vita è troppo breve per sprecare del tempo non passandolo insieme.<br></p>
-      <h2>Vuoi ri-iniziare a frequentarsi?</h2>
+      <h2>Credi in un futuro insieme?</h2>
       <div class="buttons">
         <button onclick="startLoading()">Sì</button>
         <button class="secondary" onclick="startPersuasion()">No</button>
