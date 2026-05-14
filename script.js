@@ -91,14 +91,11 @@ function navigateWithFade(route) {
 }
 
 function closePage() {
-  clearLoadingTimeouts();
-
   window.close();
 
   setTimeout(() => {
-    // If the browser blocked window.close(), show your own exit screen
-    navigateWithFade("not_interested");
-  }, 200);
+    navigateWithFade("start");
+  }, 150);
 }
 
 function backgroundScreen(image, content, extraClass = "") {
