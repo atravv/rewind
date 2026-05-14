@@ -195,7 +195,7 @@ function renderQuestionScreen() {
   app.innerHTML = backgroundScreen("images/back.png", `
     <div class="card">
       <p>La vita è troppo breve per sprecare del tempo non passandolo insieme.<br></p>
-      <h2>Credi in un futuro insieme?</h2>
+      <h2>Credi di nuovo in un futuro insieme?</h2>
       <div class="buttons">
         <button onclick="startLoading()">Sì</button>
         <button class="secondary" onclick="startPersuasion()">No</button>
